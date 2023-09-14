@@ -29,6 +29,11 @@ jobs:
       - name: Run RSpec
         run: bundle exec rspec
 
+      - name: Upload coverage report
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
   rubocop:
     runs-on: ubuntu-latest
 

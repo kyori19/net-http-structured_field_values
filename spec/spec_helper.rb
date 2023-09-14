@@ -1,5 +1,18 @@
 # frozen_string_literal: true
 
+require 'simplecov'
+require 'simplecov-html'
+require 'simplecov-cobertura'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+                                                                 SimpleCov::Formatter::HTMLFormatter,
+                                                                 SimpleCov::Formatter::CoberturaFormatter,
+                                                               ])
+SimpleCov.start do
+  enable_coverage :branch
+  primary_coverage :branch
+end
+
 require 'bundler/setup'
 require 'net/http/structured_field_values'
 
