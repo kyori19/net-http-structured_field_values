@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'net/http/structured_field_values/parameterized_value'
+require 'net/http/structured_field_values/parser'
 require 'net/http/structured_field_values/version'
 
 module Net

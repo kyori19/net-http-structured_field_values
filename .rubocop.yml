@@ -6,5 +6,20 @@ require:
 AllCops:
   NewCops: enable
 
+Metrics:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
 Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: consistent_comma
