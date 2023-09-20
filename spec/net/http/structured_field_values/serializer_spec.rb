@@ -53,7 +53,10 @@ RSpec.describe Net::HTTP::StructuredFieldValues::Serializer do
       name: 'Example-ParamListHeader',
       input: [
         parameterized_value(:abc, { 'a' => 1, 'b' => 2, 'cde_456' => true }),
-        parameterized_value([parameterized_value(:ghi, { 'jk' => 4 }), parameterized_value(:l, {})], { 'q' => '9', 'r' => :w }),
+        parameterized_value(
+          [parameterized_value(:ghi, { 'jk' => 4 }), parameterized_value(:l, {})],
+          { 'q' => '9', 'r' => :w },
+        ),
       ],
       expected: 'abc;a=1;b=2;cde_456, (ghi;jk=4 l);q="9";r=w',
     },
