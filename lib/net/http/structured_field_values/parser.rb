@@ -232,7 +232,7 @@ module Net
         def parse_as_token
           raise ParseError, 'Unexpected input' unless scanner.match?(/[a-zA-Z*]/)
 
-          scanner.scan(%r{[\da-zA-Z!#-'*+\--/:^-`|~]+}).to_sym
+          scanner.scan(/[!#-'*+\--:A-Z^-z|~]+/).to_sym
         end
 
         # @see {https://www.rfc-editor.org/rfc/rfc8941#section-4.2.7}
