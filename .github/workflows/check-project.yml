@@ -12,6 +12,28 @@ on:
       - '**.md'
 
 jobs:
+  rspec:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+
+      - name: Run RSpec
+        run: bundle exec rspec
+
+      - name: Upload coverage report
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
   rubocop:
     runs-on: ubuntu-latest
 
@@ -39,16 +61,3 @@ jobs:
           reporter: github-pr-review
           fail_on_error: true
           filter_mode: nofilter
-
-  bypass-internal:
-    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository }}
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      pull-requests: write
-
-    steps:
-      - uses: actions-ecosystem/action-add-labels@v1
-        with:
-          labels: run ci
