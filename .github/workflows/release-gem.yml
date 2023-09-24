@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - '.github/workflows/release-gem.yml'
       - 'lib/net/http/structured_field_values/version.rb'
 
 jobs:
@@ -49,7 +50,10 @@ jobs:
 
       - name: Release gem
         run: |
+          sudo apt-get update
           sudo apt-get install -y oathtool
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           GEM_HOST_OTP_CODE=$(oathtool --totp -d 6 -b ${{ secrets.RUBYGEMS_OTP_SECRET }})\
             bundle exec rake release
         env:
