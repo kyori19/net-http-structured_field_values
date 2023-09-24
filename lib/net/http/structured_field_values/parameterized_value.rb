@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
+require 'net/http'
+
 module Net
-  module HTTP
+  class HTTP
     module StructuredFieldValues
       # ParameterizedValue represents a value with parameters.
       class ParameterizedValue

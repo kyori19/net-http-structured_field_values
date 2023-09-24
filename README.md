@@ -1,4 +1,4 @@
-# Net::Http::StructuredFieldValues
+# Net::HTTP::StructuredFieldValues
 
 A Ruby implementation of [RFC 8941 - Structured Field Values for HTTP](https://datatracker.ietf.org/doc/html/rfc8941).
 
