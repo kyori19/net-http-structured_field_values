@@ -26,8 +26,8 @@ jobs:
       - name: Set versions
         id: versions
         run: |
-          echo "source_version=$(.github/workflows/print-version.rb source)" >> $GITHUB_OUTPUT
-          echo "gem_version=$(.github/workflows/print-version.rb gem)" >> $GITHUB_OUTPUT
+          echo "source_version=$(.github/workflows/print-version.rb source)" >> "$GITHUB_OUTPUT"
+          echo "gem_version=$(.github/workflows/print-version.rb gem)" >> "$GITHUB_OUTPUT"
 
   release:
     needs: check
@@ -50,7 +50,7 @@ jobs:
       - name: Release gem
         run: |
           sudo apt-get install -y oathtool
-          GEM_HOST_OTP_CODE=$(oathtool --totp -d 6 -b ${{ secrets.RUBYGEMS_OTP_SECRET }}) \
+          GEM_HOST_OTP_CODE=$(oathtool --totp -d 6 -b ${{ secrets.RUBYGEMS_OTP_SECRET }})\
             rake release
         env:
           GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
