@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - '.github/workflows/release-gem.yml'
       - 'lib/net/http/structured_field_values/version.rb'
 
 jobs:
