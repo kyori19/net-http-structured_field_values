@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'base64'
+require 'net/http'
 require 'strscan'
 
 require 'net/http/structured_field_values/parameterized_value'
@@ -12,7 +13,7 @@ require 'net/http/structured_field_values/parameterized_value'
 # rubocop:enable Lint/MissingCopEnableDirective
 
 module Net
-  module HTTP
+  class HTTP
     module StructuredFieldValues
       # RFC8941 compliant parser which parses HTTP fields into Ruby objects.
       #

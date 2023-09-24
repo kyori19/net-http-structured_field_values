@@ -6,7 +6,7 @@ require 'net/http/structured_field_values/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'net-http-structured_field_values'
-  spec.version       = Net::Http::StructuredFieldValues::VERSION
+  spec.version       = Net::HTTP::StructuredFieldValues::VERSION
   spec.authors       = ['kyori19']
   spec.email         = ['kyori@accelf.net']
 

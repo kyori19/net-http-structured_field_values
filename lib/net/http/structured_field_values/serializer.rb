@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
+require 'net/http'
+
 module Net
-  module HTTP
+  class HTTP
     module StructuredFieldValues
       # RFC8941 compliant serializer which serializes Ruby objects into HTTP fields.
       #
