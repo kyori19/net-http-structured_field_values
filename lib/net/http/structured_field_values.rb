@@ -4,6 +4,7 @@ require 'net/http'
 
 require 'net/http/structured_field_values/parameterized_value'
 require 'net/http/structured_field_values/parser'
+require 'net/http/structured_field_values/serializer'
 require 'net/http/structured_field_values/version'
 
 module Net
