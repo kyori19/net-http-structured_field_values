@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    net-http-structured_field_values (0.1.2)
+    net-http-structured_field_values (0.2.0)
 
 GEM
   remote: https://rubygems.org/
