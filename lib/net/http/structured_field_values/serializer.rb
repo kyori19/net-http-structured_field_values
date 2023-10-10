@@ -28,9 +28,36 @@ module Net
           result.encode(Encoding::ASCII)
         end
 
+        # Serializes given object.
+        #
+        # @see {https://www.rfc-editor.org/rfc/rfc8941#section-4.1}
+        #
+        # @param [Array, Hash, ParameterizedValue, Integer, Float, String, Symbol, Boolean] obj object to be serialized
         # @return [String]
         def self.serialize(obj)
           new.serialize(obj)
+        end
+
+        # Serializes input as Inner List.
+        #
+        # @note Use of this method breaks RFC8941.
+        #
+        # @param [Array, ParameterizedValue] input object to be serialized
+        # @return [String] serialized output
+        def serialize_as_inner_list(input)
+          arr, params = unpack_parameterized_value(input)
+          serialize_inner_list(arr, params)
+          result.encode(Encoding::ASCII)
+        end
+
+        # Serializes input as Inner List.
+        #
+        # @note Use of this method breaks RFC8941.
+        #
+        # @param [Array, ParameterizedValue] input object to be serialized
+        # @return [String] serialized output
+        def self.serialize_as_inner_list(input)
+          new.serialize_as_inner_list(input)
         end
 
         private

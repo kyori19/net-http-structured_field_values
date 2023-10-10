@@ -631,6 +631,15 @@ RSpec.describe Net::HTTP::StructuredFieldValues::Serializer do
       end.to raise_error(Net::HTTP::StructuredFieldValues::Serializer::SerializationError)
     end
   end
+
+  describe '.serialize_as_inner_list' do
+    it 'serializes input as inner list' do
+      output = described_class.serialize_as_inner_list(
+        Net::HTTP::StructuredFieldValues::ParameterizedValue.new([1, 3], { 'a' => :b }),
+      )
+      expect(output).to eq '(1 3);a=b'
+    end
+  end
 end
 
 # rubocop:enable Naming/VariableNumber
