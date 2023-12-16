@@ -746,7 +746,7 @@ RSpec.describe Net::HTTP::StructuredFieldValues::Parser do
 
   valid_tests.each do |test|
     it "parses #{test[:name]} in parse_as_#{test[:type]}" do
-      expect(described_class.send("parse_as_#{test[:type]}", test[:input])).to eq(test[:expected])
+      expect(described_class.send(:"parse_as_#{test[:type]}", test[:input])).to eq(test[:expected])
     end
   end
 
@@ -1081,7 +1081,7 @@ RSpec.describe Net::HTTP::StructuredFieldValues::Parser do
   invalid_tests.each do |test|
     it "fails to parse #{test[:name]} in parse_as_#{test[:type]}" do
       expect do
-        described_class.send("parse_as_#{test[:type]}", test[:input])
+        described_class.send(:"parse_as_#{test[:type]}", test[:input])
       end.to raise_error(described_class::ParseError)
     end
   end

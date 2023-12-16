@@ -35,14 +35,14 @@ module Net
         def parse_as(type)
           raise ArgumentError, "Invalid type: #{type}" unless TOP_LEVEL_TYPES.include?(type)
 
-          send("parse_as_#{type}").tap do
+          send(:"parse_as_#{type}").tap do
             remove_leading_spaces
             raise ParseError, 'Unexpected input' unless scanner.eos?
           end
         end
 
         TOP_LEVEL_TYPES.each do |type|
-          define_singleton_method("parse_as_#{type}") do |input|
+          define_singleton_method(:"parse_as_#{type}") do |input|
             new(input).parse_as(type)
           end
         end
