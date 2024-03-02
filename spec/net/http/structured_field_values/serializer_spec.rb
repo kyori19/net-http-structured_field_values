@@ -628,7 +628,7 @@ RSpec.describe Net::HTTP::StructuredFieldValues::Serializer do
     it "fails to serialize #{test[:name]}" do
       expect do
         described_class.serialize(test[:input])
-      end.to raise_error(Net::HTTP::StructuredFieldValues::Serializer::SerializationError)
+      end.to raise_error(described_class::SerializationError)
     end
   end
 
