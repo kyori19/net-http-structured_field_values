@@ -28,7 +28,7 @@ jobs:
         run: bundle exec rspec
 
       - name: Upload coverage report
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
 
   rubocop:
     runs-on: ubuntu-latest
