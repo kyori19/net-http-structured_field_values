@@ -10,7 +10,7 @@ GEM
     ast (2.4.3)
     base64 (0.2.0)
     diff-lcs (1.5.1)
-    docile (1.4.0)
+    docile (1.4.1)
     json (2.12.2)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
@@ -23,8 +23,7 @@ GEM
     rainbow (3.1.1)
     rake (13.3.0)
     regexp_parser (2.10.0)
-    rexml (3.3.6)
-      strscan
+    rexml (3.4.1)
     rspec (3.13.1)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -67,12 +66,11 @@ GEM
       docile (~> 1.1)
       simplecov-html (~> 0.11)
       simplecov_json_formatter (~> 0.1)
-    simplecov-cobertura (2.1.0)
+    simplecov-cobertura (3.0.0)
       rexml
       simplecov (~> 0.19)
-    simplecov-html (0.12.3)
+    simplecov-html (0.13.1)
     simplecov_json_formatter (0.1.4)
-    strscan (3.1.0)
     unicode-display_width (2.6.0)
 
 PLATFORMS
@@ -88,7 +86,7 @@ DEPENDENCIES
   rubocop-rake (~> 0.7)
   rubocop-rspec (~> 3.5)
   simplecov (~> 0.22)
-  simplecov-cobertura (~> 2.1)
+  simplecov-cobertura (~> 3.0)
 
 BUNDLED WITH
    2.4.10
