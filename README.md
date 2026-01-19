@@ -12,7 +12,7 @@ gem 'net-http-structured_field_values'
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
